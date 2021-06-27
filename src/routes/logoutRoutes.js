@@ -18,7 +18,7 @@ router.get("/", (req, res, next) => {
 
     if (req.session.user) {
         req.session.destroy();
-        return res.status(200).render("login");
+        return res.status(200).redirect("login");
       }
 });
 
