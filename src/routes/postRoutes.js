@@ -9,7 +9,7 @@ const User = require('../models/UserSchema');
 router.get("/:id",(req, res, next) => {
 
     let page = {
-        pagetitle:"View Tweet / Twitter",
+        pagetitle:"Tweet / Twitter",
         userLoggedIn: req.session.user,
         userLoggedInJs: JSON.stringify(req.session.user),
         postId: req.params.id
