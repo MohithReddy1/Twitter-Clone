@@ -1,0 +1,859 @@
+*{
+    outline: none !important;
+    font-family: 'Roboto', sans-serif;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.row1{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x)/ -2);
+    margin-left: calc(var(--bs-gutter-x)/ -2);
+}
+
+
+button{
+    margin: 5px;
+}
+
+.errorMessage{
+    padding: 15px;
+    font-size: 20px;
+    margin-top: 10%;
+    margin-left: 12%;
+}
+
+/* sidebar */
+
+nav{
+    /* display:flex;
+    flex-direction:column;
+    align-items:flex-end; */
+    height:100%;
+    padding-left: 8%;
+}
+
+nav a{
+    display: flex;
+    padding: 10px;
+    margin: 15px 0px;
+    font-size: 25px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 160px;
+}
+
+.diff{
+    width: 190px;
+}
+
+.small{
+    width: 45px;
+}
+
+nav a:hover{
+    color: inherit;
+}
+
+nav a.blue{
+    color: rgba(29,161,242,1.00);
+}
+
+nav a:hover{
+    background-color: #d4edff;
+    color: rgba(29,161,242,1.00);
+    border-radius: 25px;
+}
+
+.symbol{
+    font-size: 25px;
+}
+
+nav a span{
+    text-decoration: none;
+    font-weight: 700;
+    padding-left: 25px;
+    font-size: 1.3vw;
+}
+
+button{
+    background-color:transparent;
+    border:none;
+    color:rgba(0,0,0,0.35);
+}
+
+/* main section */
+
+.mainSectionContainer{
+    border-left: 1px solid #E6ECF0;
+    border-right: 1px solid #E6ECF0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainSectionContainer h1{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.titlecontainer{
+    padding:0px 15px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E6ECF0;
+    flex-shrink: 0;
+}
+
+.backward{
+    padding: 3px 5px;
+    margin-right: 1rem;
+}
+
+.backward:hover{
+    background-color: #d4edff;
+    color: rgba(29,161,242,1.00);
+    border-radius: 25px;
+}
+
+.titlecontainer h1{
+    flex: 1;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.postFormContainer{
+    display:flex;
+    padding:15px 15px;
+    border-bottom:10px solid rgb(230, 236,240);
+    flex-shrink:0;
+}
+
+/* Modal */
+.modal .modal-title{
+    font-weight: bold;
+}
+.modal .postFormContainer{
+    border: none;
+    padding: 0;
+    padding-top: 15px;
+}
+
+.modal .textAreaContainer textarea{
+    border: none;
+    overflow: hidden;
+    height: 50px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: black;
+}
+
+.modal .post{
+    padding: 0 0 15px 0;
+}
+
+#cancelButton{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 15px;
+    color: black;
+    background-color: rgb(235, 238, 240);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+#cancelButton:hover{
+    background-color: rgb(212, 214, 216);
+}
+
+#cancelButton:focus{
+    outline: none;
+    border: none;
+}
+
+#deletePostButton{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 15px;
+    color: white;
+    background-color: rgba(0, 149, 255, 0.9);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+#imageUploadModalButton,
+#coverPhotoModalButton{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 20px;
+    color: white;
+    background-color: rgba(0, 149, 255, 0.9);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+#deletePostButton:focus{
+    outline: none;
+    border: none;
+}
+
+#deletePostButton:hover{
+    background-color: rgb(0, 149, 255);
+}
+
+#submitReplyButton{
+    background-color: rgba(29,161,242,1.00);
+    color:white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border:none;
+    border-radius:50px;
+    padding:8px 15px;
+    float:right;
+}
+
+#submitReplyButton:disabled{
+    background-color:#9BD1F9;
+}
+
+.userImagecontainer{
+    width:50px;
+    height:50px;
+}
+
+.userImagecontainer img{
+    width:100%;
+    border-radius:50%;
+    background-color:white;
+    cursor: pointer;
+}
+
+.textAreaContainer{
+    flex:1;
+    padding-left:15px;
+}
+
+.textAreaContainer textarea{
+    width:100%;
+    border:none;
+    resize:none;
+    font-size:19px;
+    border-bottom:1px solid #E6ECF0;
+    margin-bottom:5px;
+    overflow: hidden;
+    height: 50px;
+    font-weight: 400;
+    color: black;
+}
+
+/* .textAreaContainer textarea:focus{
+    outline: none;
+} */
+
+#submitPostButton{
+    background-color: rgba(29,161,242,1.00);
+    color:white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border:none;
+    border-radius:50px;
+    padding:8px 15px;
+    float:right;
+}
+
+#submitPostButton:disabled{
+    background-color:#9BD1F9;
+}
+
+.noResults{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 15px;
+}
+.postActionContainer{
+    color: rgb(91, 112, 131);
+    margin-bottom: 8px;
+    padding-left: 35px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.postActionContainer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.postActionContainer a:hover{
+    color: inherit;
+    border-bottom: 1px solid rgb(91, 112, 131);
+}
+
+.post{
+    display:flex;
+    flex-direction:column;
+    padding:18px;
+    cursor:pointer;
+    border-bottom:1px solid rgb(230, 236,240);
+    flex-shrink:0;
+}
+
+.mainContentContainer{
+    flex:1;
+    display:flex;
+}
+
+.postContentContainer{
+    padding-left:15px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.username,
+.date{
+    color:rgb(101, 119, 134);
+    padding-left: 5px;
+}
+
+.displayName{
+    text-decoration:none;
+    color: black;
+    font-weight:bold;
+}
+
+.displayName:hover{
+    color: inherit;
+    border-bottom: 1px solid black;
+}
+
+.postContentContainer .header button{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    float: right;
+    border-radius: 50%;
+    padding: 2px 8px;
+}
+
+.postContentContainer .header button:hover{
+    color: rgb(27, 149, 224);
+    background-color: #d4edff;
+}
+
+.postFooter{
+    display:flex;
+    align-items:center;
+}
+
+.postFooter .postButtonContainer{
+    flex:1;
+    display:flex;
+}
+
+.postFooter .postButtonContainer button{
+    padding: 1px 5px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.postBody{
+    padding:5px 0px;
+    font-weight: 400;
+    color: black;
+}
+
+button{
+    font-size: inherit;
+}
+
+.post.largeFont .postBody,
+.post.largeFont .postFooter .postButtonContainer button{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.replyFlag{
+    margin-bottom: 5px;
+}
+
+.replyFlag span{
+    color: rgb(91, 112, 131);
+}
+
+.replyFlag a{
+    color: rgb(27, 149, 224);
+    text-decoration: none;
+    margin: 0;
+}
+
+.replyFlag a:hover{
+    color: rgb(27, 149, 224);
+    border-bottom: 1px solid rgb(27, 149, 224);
+}
+
+.chooseImage{
+    display: flex;
+}
+
+/* input[type="file"]{
+    display: none;
+} */
+
+.chooseImage label{
+    color: rgba(29,161,242,1.00);
+    font-size: 1.3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px;
+    font-weight: 500;
+}
+
+.chooseImage label:hover{
+    background-color: #d4edff;
+    border-radius: 25px;
+}
+
+
+.commentButton:hover{
+    background-color:#d4edff;
+    color: rgba(29,161,242,1.00);
+    border-radius:50%;
+}
+
+.retweetButton:hover{
+    background-color:rgba(23, 191, 99,0.2);
+    color: rgb(23, 191, 99);
+    border-radius:50%;
+}
+
+.likeButton:hover{
+    background-color:rgb(251 214 225);
+    color: rgb(224, 36, 94);
+    border-radius:50%;
+}
+
+.postButtonContainer.red button.active{
+    color: rgb(224, 36, 94);
+}
+
+.postButtonContainer.green button.active{
+    color: rgb(23, 191, 99);
+}
+
+.space{
+    margin-left: 8px;
+}
+
+
+/* last section */
+/* .last{
+    padding:0% 2%;
+} */
+
+.searchContainer{
+    padding:10px 15px;
+    position: relative;
+    color: rgb(101, 119, 134);
+}
+
+.searchContainer span {
+    position: absolute;
+    top: 16px;
+    left: 25px;
+}
+
+#searchBox:focus{
+    outline: none;
+    border: none;
+}
+
+.heading{
+    padding:10px 15px;
+}
+
+.heading h2{
+    color: black;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 800;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom:1px solid rgb(230, 236,240);
+}
+
+.usererror{
+    padding: 15px;
+}
+
+.profileHeaderContainer .coverPhotoSection{
+    height:200px;
+    background-color: rgb(196, 207, 214);
+    position:relative;
+}
+
+.profileHeaderContainer .userImagecontainer{
+    height:132px;
+    width:132px;
+    margin-left:15px;
+    position:absolute;
+    top: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileHeaderContainer .userImagecontainer img{
+    border: 4px solid white;
+}
+
+.profileHeaderContainer .profileButtonsContainer{
+    text-align: right;
+    padding: 15px;
+    min-height: 66px;
+}
+
+.profileButton,
+.followButton {
+    border: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.profileButton:hover,
+.followButton:hover {
+    background-color: rgba(212,237,255,0.6);
+    color: rgb(29, 161, 242);
+}
+
+
+.followButton.following{
+    background-color: rgb(29, 161, 242);
+    color: white;
+}
+
+/* .following:hover{
+    content: "Unfollow";
+    background-color: rgb(202, 32, 85);
+} */
+
+.profileHeaderContainer .userDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.userDetailsContainer .displayName{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 800;
+}
+
+.userDetailsContainer .displayName:hover{
+    border: 0;
+}
+
+.userDetailsContainer .username{
+    padding: 0;
+}
+
+.followersContainer a{
+    color: rgb(101, 119, 134);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.followersContainer .value{
+    color: black;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.followersContainer a:hover{
+    color: rgb(101, 119, 134);
+    border-bottom: 1px solid black;
+}
+
+.tabsContainer{
+    display: flex;
+    border-bottom: 1px solid #E6ECF0;
+    flex-shrink: 0;
+}
+
+.tab{
+    flex: 1;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab.active{
+    color: rgb(29, 161, 242);
+    border-bottom: 3px solid rgb(29, 161, 242);
+}
+
+.tabsContainer a{
+    color: rgb(91, 112, 131);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.tabsContainer a:hover{
+    color: rgb(29, 161, 242);
+    background-color: rgba(212,237,255,0.6);
+}
+
+.resultsContainer{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.resultsContainer .user{
+    padding: 15px;
+    display: flex;
+    border-bottom: 1px solid #E6ECF0;
+}
+
+.resultsContainer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.resultsContainer a:hover{
+    color: inherit;
+}
+
+.user .userdetailsContainer{
+    flex: 1;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.profilePictureButton,
+.coverPhotoButton{
+    position: absolute;
+    font-size: 50px;
+    color: rgba(0,0,0,0.3);
+    display: none;
+}
+
+.userImagecontainer:hover .profilePictureButton,
+.coverPhotoSection:hover .coverPhotoButton{
+    display: block;
+}
+
+.coverPhotoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.coverPhotoContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#imagePreview,
+#coverPreview{
+    width: 100%;
+    display: block;
+    max-width: 100%;
+}
+
+.searchBarContainer{
+    position: relative;
+    color: rgb(101, 119, 134);
+    padding: 10px 15px;
+}
+
+.searchBarContainer span {
+    position: absolute;
+    top: 16px;
+    left: 25px;
+}
+
+.searchBarContainer #searchBox,
+.searchContainer #searchBox {
+    height: 36px;
+    width: 100%;
+    padding: 5px 15px 5px 40px;
+    border-radius: 50px;
+    background-color: rgb(235, 238, 240);
+    border: none;
+    color: rgb(101, 119, 134);
+}
+
+.chatPageContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.chatTitleBar{
+    border-bottom: 1px solid #E6ECF0;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding: 15px;
+}
+
+.chatTitleBar label{
+    margin-right: 10px;
+}
+
+#userSearchTextbox{
+    border: none;
+    flex: 1;
+    font-weight: 200px;
+    min-width: 350px;
+}
+
+#createChatButton{
+    border: none;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    padding: 7px 20px;
+    margin: 10px auto;
+    border-radius: 40px;
+}
+
+#createChatButton:disabled{
+    background-color: #9BD1F9;
+}
+
+.titlecontainer #newIcon{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(29, 161, 242);
+}
+
+.titlecontainer #newIcon:hover{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(29, 161, 242);
+}
+
+.selectedUsers{
+    font-weight: 300;
+    background-color: #CBE5FE;
+    color: #0084ff;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px 5px 0 0;
+    display: inline-block;
+}
+
+.resultListItem{
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 1px solid #E6ECF0;
+}
+
+.resultListItem:hover{
+    background-color: #F2F2F2;
+}
+
+.resultsDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.resultsDetailsContainer .chatHeading{
+    font-weight: 600;
+}
+
+.resultsDetailsContainer .latestMessage{
+    color: rgb(101, 119, 134);
+    font-size: 15px;
+}
+
+.resultListItem img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.resultsImageContainer{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.groupChatImage img{
+    height: 65%;
+    width: 65%;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border: 2px solid white;
+}
+
+.groupChatImage img:first-of-type{
+    top:0;
+    right: 0;
+}
+
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+@media screen and (max-width: 1280px) {
+    nav a span{
+        display: none;
+    }
+
+    nav a{
+        width: 45px;
+        margin-left: 10%;
+    }
+    .diff{
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 1004px){
+    .last{
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>header}}
+
+<body>
+    <div class="wrapper">
+        <div class="row1">
+            <nav class="col-3">
+                <table>
+                    <tr ><a class="blue small" href="/"><i class="fab fa-twitter symbol"></i></a></tr>
+                    <tr >
+                        <a href="/">
+                        <i style="margin-left: -2px;" class="fas fa-home symbol"></i><span>Home</span>
+                        </a>
+                    </tr>
+                    <tr >
+                        <a class="blue" href="/search">
+                        <i class="fas fa-search symbol"></i><span>Search</span>
+                        </a>
+                    </tr>
+                    <tr >
+                        <a class="diff" href="/notifications">
+                        <i style="margin-left: 2px;" class="fas fa-bell symbol"></i><span>Notifications</span>
+                        </a>
+                    </tr>
+
+                    <tr >
+                        <a href="/messages">
+                        <i class="fas fa-envelope symbol"></i><span>Messages</span>
+                        </a>
+                    </tr>
+
+                    <tr >
+                        <a href="/profile">
+                        <i style="margin-left: 2px;" class="fas fa-user symbol"></i><span>Profile</span>
+                        </a>
+                    </tr>
+
+                    <tr>
+                        <a href="/logout">
+                            <i style="margin-left: 2px;" class="fas fa-sign-out-alt symbol"></i><span>Logout</span>
+                        </a>
+                    </tr>
+                </table>
+            </nav>
+            <div class="mainSectionContainer col-9 col-md-7 col-lg-6">
+                <div class="titlecontainer">
+                    <span class="backward"><a href="javascript:history.back()"><img src="/images/back.svg" alt="back"></a></span>
+                    <h1>Search</h1>
+                </div>
+
+                <div class="searchBarContainer">
+                    <span><i class="fas fa-search"></i></span>
+                    <input type="text" name="searchBox" id="searchBox", placeholder="Search for users or tweets">
+                </div>
+
+                <div class="tabsContainer">
+                    <a href="/search/tweets" id="Tweets" class="tab active">Tweets</a>
+                    <a href="/search/users" id="Users" class="tab">Users</a>
+                </div>
+
+                <div class="resultsContainer">
+
+                </div>
+                {{>reply}}
+                {{>delete}}
+            </div>
+            {{!-- <div class="d-none d-md-block col-md-2 col-lg-3 last">
+                <div class="searchContainer">
+                    <span id="searchIcon"><i class="fas fa-search"></i></span>
+                    <input type="text" name="searchBox" id="searchBox", placeholder="Search for users or tweets">
+                </div>
+                <div class="heading">
+                    <h2>What’s happening</h2> 
+                </div>
+            </div> --}}
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/b292d3856d.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/search.js"></script>
+
+    <script type="text/javascript">
+        function auto_grow(element){
+            element.style.height = "50px";
+            element.style.height = (element.scrollHeight)+"px";
+        }
+        
+    </script>
+
+    <script>
+        let userLoggedIn = {{{userLoggedInJs}}};
+    </script>
+
+</body>
+
+</html>

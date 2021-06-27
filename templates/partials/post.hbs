@@ -1,0 +1,24 @@
+<div class="postFormContainer">
+    <div class="userImagecontainer">
+        <a href="/profile/{{userLoggedIn.username}}">
+            <img src="{{userLoggedIn.profilePic}}" alt="Profile Picture">
+        </a>
+        
+    </div>
+    <div class="textAreaContainer">
+        <textarea name="" id="postTextArea" placeholder="What's happening?" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea>
+        {{!-- <div class="chooseImage">
+            <input type="file" id="file" accept="image/*">
+            <label for="file"><img style="width: 1.3em; color: black;" src="images/image.svg" alt="select image"></label>
+        </div> --}}
+        {{!-- <div class="form-group">
+            <label for="exampleFormControlFile1"></label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div> --}}
+        <div class="buttonContainer">
+            <button id="submitPostButton" disabled="">Tweet</button>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,15 @@
+
+<button id="followButton" class="followButton" data-user=user._id></button>
+
+<script>
+    function createfollowButton(user, isFollowing){
+
+        if(isFollowing == true){
+            document.getElementsByClassName(".followButton").addClass("following");
+            document.getElementById("followButton").innerHTML = "Following";
+        }
+
+        document.getElementById("followButton").innerHTML = "Follow";
+    }
+
+</script>

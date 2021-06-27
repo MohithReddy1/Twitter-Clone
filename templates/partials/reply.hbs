@@ -1,0 +1,28 @@
+<!-- Modal -->
+<div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="replyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="replyModalLabel">Reply</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="originalPostContainer"></div>
+        <div class="postFormContainer">
+          <div class="userImagecontainer">
+              <img src="{{userLoggedIn.profilePic}}" alt="Profile Picture">
+          </div>
+          <div class="textAreaContainer">
+              <textarea name="" id="replyTextArea" placeholder="What's happening?" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="submitReplyButton" class="btn btn-primary" disabled="">Reply</button>
+        {{!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> --}}
+      </div>
+    </div>
+  </div>
+</div>

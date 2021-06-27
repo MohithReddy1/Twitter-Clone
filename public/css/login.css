@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.loginContainer{
+    padding: 20px;
+    max-width: 600px;
+}
+
+h1{
+    padding: 10px 0px;
+    color: black;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* .errormessage{
+    color: rgb(253, 59, 59);
+    font-size: 15px;
+} */
+
+p{
+    margin: 0;
+    color: red;
+}
+
+.loginContainer input{
+    padding: 0px 5px;
+    margin-bottom: 18px;
+    width: 100%;
+    border: 1px solid rgb(196, 207, 214);
+    border-width: 1px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 55px;
+    width: 400px;
+}
+
+.loginContainer input:focus{
+    outline:none;
+    border: 2px solid rgb(29, 161, 242);
+}
+
+.loginContainer input[type="submit"]{
+    color: white;
+    background-color: rgb(29, 161, 242);
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    height: 45px;
+}
+
+.loginContainer form div {
+    position: relative;
+}
+
+/* .loginContainer form div label{
+    position: absolute;
+    top: -10px;
+}  */
+
+label{
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    pointer-events: none;
+    color: #999;
+    transition: .5s;
+}
+
+.loginContainer input:focus ~ label,
+.loginContainer input:valid ~ label{
+    top:0px;
+    color: rgb(29, 161, 242);
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
+.loginContainer input[type="email"]:focus ~ label,
+.loginContainer input[type="email"]:valid ~ label{
+    top:0px;
+    color: rgb(29, 161, 242);
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
+.material-icons{
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    cursor: pointer;
+}
+
+form a{
+    text-decoration: none;
+    margin-left: 90px;
+    color: rgb(29, 161, 242);
+}
+
+form a:hover{
+    border-bottom: 1px solid rgb(29, 161, 242);
+    color: rgb(29, 161, 242);
+}
