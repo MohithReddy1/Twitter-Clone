@@ -4,7 +4,6 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const router = express.Router();
-const bcrypt = require("bcrypt");
 const User = require('../models/UserSchema');
 const Chat = require("../models/ChatSchema");
 
