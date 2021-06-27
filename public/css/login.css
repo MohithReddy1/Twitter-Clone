@@ -80,6 +80,13 @@ label{
     transition: .5s;
 }
 
+.labelactive{
+    top:0px;
+    color: rgb(29, 161, 242);
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
 .loginContainer input:focus ~ label,
 .loginContainer input:valid ~ label{
     top:0px;

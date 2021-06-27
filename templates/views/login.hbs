@@ -18,12 +18,12 @@
             <form method="POST">
                 <p class="errorMessage">{{errorMessage}}</p>
                 <div>
-                    <input type="text" name="logUsername" required>
-                    <label for="logUsername">Username or Email</label>
+                    <input type="text" name="logUsername" id="username" required>
+                    <label for="logUsername" id="userlabel">Username or Email</label>
                 </div>
                 <div class="passwordcontainer">
                     <input type="password" id="password" name="logPassword" required>
-                    <label for="logPassword">Password</label>
+                    <label for="logPassword" id="passlabel">Password</label>
                     <i class="material-icons" onclick="change(this)">visibility_off</i> 
                 </div>
                 <input type="submit" value="Log in">
@@ -46,6 +46,13 @@
             }else{
                 pwd.type = "password";
             }
+        }
+
+        if(document.getElementById("username").innerHTML != ""){
+            document.getElementById("userlabel").classList.add("labelactive");
+        }
+        if(document.getElementById("password").innerHTML != ""){
+            document.getElementById("passlabel").classList.add("labelactive");
         }
     </script>
 
