@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 
 const User = require('../models/UserSchema');
 
@@ -38,9 +38,10 @@ router.post("/", async (req, res, next) => {
         });
 
         if(user != null){
-            let result = await bcrypt.compare(req.body.logPassword, user.password);
+            //let result = await bcrypt.compare(req.body.logPassword, user.password);
+            let result = await req.body.logPassword;
 
-            if(result === true){
+            if(result === user.password){
                 req.session.user = user;
                 return res.redirect("/");
             }

@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 // const bodyParser = require("body-parser");
 
 const User = require('../models/UserSchema');
@@ -49,7 +49,7 @@ router.post("/", async (req, res, next) => {
             //No user found
             let data = req.body;
 
-            data.password = await bcrypt.hash(password, 10);
+            //data.password = await bcrypt.hash(password, 10);
 
             User.create(data)
             .then((user) =>{
