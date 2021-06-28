@@ -14,7 +14,7 @@ body{
 
 .loginContainer{
     padding: 20px;
-    max-width: 600px;
+    width: 30rem;
 }
 
 h1{
@@ -44,7 +44,7 @@ p{
     border-radius: 5px;
     box-sizing: border-box;
     height: 55px;
-    width: 400px;
+    width: 100%;
 }
 
 .loginContainer input:focus{
@@ -109,14 +109,17 @@ label{
     top: 17px;
     cursor: pointer;
 }
-
-form a{
+.linkContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkContainer a{
     text-decoration: none;
-    margin-left: 90px;
     color: rgb(29, 161, 242);
 }
 
-form a:hover{
+.linkContainer a:hover{
     border-bottom: 1px solid rgb(29, 161, 242);
     color: rgb(29, 161, 242);
 }

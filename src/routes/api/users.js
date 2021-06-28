@@ -5,7 +5,7 @@ const hbs = require("hbs");
 const router = express.Router();
 const multer = require("multer");
 const fs = require("fs");
-const upload = multer({ dest: "uploads/"});
+const upload = multer({ dest: "/uploads/"});
 
 const User = require('../../models/UserSchema');
 const Post = require('../../models/PostSchema');
