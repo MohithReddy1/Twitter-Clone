@@ -52,8 +52,30 @@
                 </div>
 
                 <span class="errorMessage" id="error" style="display: block;">{{errorMessage}}</span>
+
+                <div class="chatPageContainer">
+                    <div class="chatTitleBarContainer" id="chatTitleBar">
+                        
+                        <span id="chatName">ChatName</span>
+                    </div>
+                    <div class="mainContentContainer">
+                        <div class="chatContainer">
+                            <div class="chatMessages">
+
+                            </div>
+
+                            <div class="fotter">
+                                <textarea name="messageInput" placeholder="Start a new message" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea>
+                                <button class="sendMessageButton"><i class="far fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
+
+            
+
             {{!-- <div class="d-none d-md-block col-md-2 col-lg-3 last">
                 <div class="searchContainer">
                     <span id="searchIcon"><i class="fas fa-search"></i></span>
@@ -78,9 +100,13 @@
 
     <script type="text/javascript">
         function auto_grow(element){
-            element.style.height = "50px";
+            element.style.height = "40px";
             element.style.height = (element.scrollHeight)+"px";
         }
+
+        //let chatUsers = {{{chat.users}}};
+        //let usersProfilePic = chatUsers.profilePic;
+        //document.getElementById("chatTitleBar").innerHTML = `<img src="${chatUsers.profilePic}" alt="">`
                         
     </script>
 

@@ -14,15 +14,16 @@ body{
 
 .loginContainer{
     padding: 20px;
-    width: 30rem;
+    width: 28rem;
 }
 
-h1{
+.loginContainer h1{
     padding: 10px 0px;
     color: black;
     display: block;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: calc(1rem + 1.3vw);
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 /* .errormessage{
@@ -84,7 +85,7 @@ label{
     top:0px;
     color: rgb(29, 161, 242);
     margin-bottom: 2px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .loginContainer input:focus ~ label,
@@ -92,7 +93,7 @@ label{
     top:0px;
     color: rgb(29, 161, 242);
     margin-bottom: 2px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .loginContainer input[type="email"]:focus ~ label,
@@ -100,7 +101,7 @@ label{
     top:0px;
     color: rgb(29, 161, 242);
     margin-bottom: 2px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .material-icons{
