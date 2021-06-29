@@ -730,6 +730,12 @@ button{
     color: rgb(101, 119, 134);
 }
 
+.newChatPageContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 .chatPageContainer{
     display: flex;
     flex-direction: column;
@@ -913,6 +919,25 @@ button{
     flex-direction: column;
     overflow-y: auto;
     padding: 15px;
+}
+
+#chatImagesContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#chatImagesContainer img{
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#chatImagesContainer img:not(:last-child){
+    margin-left: -10px;
 }
 
 @media screen and (max-width: 1280px) {

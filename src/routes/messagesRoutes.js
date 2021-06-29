@@ -39,7 +39,8 @@ router.get("/:chatId", async (req, res, next) => {
     let details = {
         pagetitle: "Chat / Twitter",
         userLoggedIn: req.session.user,
-        userLoggedInJs: JSON.stringify(req.session.user)
+        userLoggedInJs: JSON.stringify(req.session.user),
+        chat: null
     };
 
     if(!isValidId){
@@ -67,7 +68,7 @@ router.get("/:chatId", async (req, res, next) => {
     }
 
     else{
-        details.chat = chat;
+        details.chat = JSON.stringify(chat);
     }
     
 

@@ -55,7 +55,12 @@
 
                 <div class="chatPageContainer">
                     <div class="chatTitleBarContainer" id="chatTitleBar">
-                        
+                        <div id="chatImagesContainer">
+                            <div class="userCount">
+                                <span id="userCount"></span>
+                            </div>
+
+                        </div>
                         <span id="chatName">ChatName</span>
                     </div>
                     <div class="mainContentContainer">
@@ -99,15 +104,12 @@
     <script src="/js/chatPage.js"></script>
 
     <script type="text/javascript">
+    //<script>
         function auto_grow(element){
             element.style.height = "40px";
             element.style.height = (element.scrollHeight)+"px";
         }
-
-        //let chatUsers = {{{chat.users}}};
-        //let usersProfilePic = chatUsers.profilePic;
-        //document.getElementById("chatTitleBar").innerHTML = `<img src="${chatUsers.profilePic}" alt="">`
-                        
+      
     </script>
 
     <script>
@@ -117,6 +119,30 @@
         if(document.getElementById("errorhandle").innerHTML == ""){
             document.getElementById("error").style.display = "none";
         }
+
+        let chat = {{{chat}}};
+        let chatUsers = chat.users;
+        let usersProfilePic = [];
+        //let i = 0;
+        //let maxImagesToShow = 3;
+        //let remainingUsers = chat.users.length - maxImagesToShow;
+        //remainingUsers--; //remove 1 since we won't show our own image
+        //if (remainingUsers > 0){
+        //        document.getElementById("userCount"). innerHTML = `+${remainingUsers}`;
+        //}
+        chatUsers.forEach(c =>{
+            usersProfilePic.push(c.profilePic);
+            //if(chatUsers.length !=1 && user._id == userLoggedIn._id){
+            //    continue;
+            //}
+            //else if(i >= maxImagesToShow){
+            //    break;
+            //}
+            if(c.profilePic != userLoggedIn.profilePic){
+                document.getElementById("chatImagesContainer").innerHTML += `<img src="${c.profilePic}" alt="User's Profile Pic">`; 
+            }
+            //i++;
+        });
 
     </script>
 
