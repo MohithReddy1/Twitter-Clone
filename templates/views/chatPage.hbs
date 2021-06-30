@@ -53,7 +53,7 @@
 
                 <span class="errorMessage" id="error" style="display: block;">{{errorMessage}}</span>
 
-                <div class="chatPageContainer">
+                <div id="chatPageContainer" class="chatPageContainer">
                     <div class="chatTitleBarContainer" id="chatTitleBar">
                         <div id="chatImagesContainer">
                             <div class="userCount">
@@ -61,7 +61,7 @@
                             </div>
 
                         </div>
-                        <span id="chatName">ChatName</span>
+                        <span id="chatName" data-bs-toggle="modal" data-bs-target="#chatNameModal">ChatName</span>
                     </div>
                     <div class="mainContentContainer">
                         <div class="chatContainer">
@@ -76,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+                {{>chatName}}
                 
             </div>
 
@@ -109,18 +110,24 @@
             element.style.height = "40px";
             element.style.height = (element.scrollHeight)+"px";
         }
+
+        let errorMessage = '{{errorMessage}}';
+        if(errorMessage){
+            document.getElementById("chatPageContainer").classList.add("erroractive");
+        }
       
     </script>
 
     <script>
         let userLoggedIn = {{{userLoggedInJs}}};
-        let chatId = '{{chat._id}}';
+        
 
         if(document.getElementById("errorhandle").innerHTML == ""){
             document.getElementById("error").style.display = "none";
         }
 
         let chat = {{{chat}}};
+        let chatId = chat._id;
         let chatUsers = chat.users;
         let usersProfilePic = [];
         //let i = 0;

@@ -25,6 +25,10 @@ button{
     margin: 5px;
 }
 
+.erroractive{
+    visibility: hidden;
+}
+
 .errorMessage{
     padding: 15px;
     font-size: 20px;
@@ -209,7 +213,8 @@ button{
 }
 
 #imageUploadModalButton,
-#coverPhotoModalButton{
+#coverPhotoModalButton,
+#chatNameButton{
     font-size: 15px;
     font-weight: 700;
     line-height: 20px;
@@ -871,6 +876,7 @@ button{
     width: 100%;
     border: 1px solid transparent;
     padding: 0 5px;
+    font-weight: 600;
 }
 
 #chatName:hover{
@@ -938,6 +944,10 @@ button{
 
 #chatImagesContainer img:not(:last-child){
     margin-left: -10px;
+}
+
+#chatNameTextBox{
+    width: 100%;
 }
 
 @media screen and (max-width: 1280px) {

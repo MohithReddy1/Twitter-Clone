@@ -44,7 +44,7 @@ router.get("/:chatId", async (req, res, next) => {
     };
 
     if(!isValidId){
-        details.errorMessage = "Chat does not exist or you don't have permission to view it.";
+        details.errorMessage = "Chat does not exist or you do not have permission to view it.";
         return res.status(200).render("chatPage", details);
     }
 
@@ -63,7 +63,7 @@ router.get("/:chatId", async (req, res, next) => {
 
 
     if(chat == null){
-        details.errorMessage = "Chat does not exist or you don't have permission to view it.";
+        details.errorMessage = "Chat does not exist or you do not have permission to view it.";
 
     }
 

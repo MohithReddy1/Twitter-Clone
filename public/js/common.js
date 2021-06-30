@@ -584,3 +584,24 @@ function updateSelectedUsersHtml(){
     $(".selectedUsers").remove();
     $("#selectedUsers").prepend(elements);
 }
+
+function getChatName(chartData){
+    let chatName = chartData.chatName;
+
+    if(!chatName) {
+        let otherChatUser = getOtherChatUser(chartData.users);
+        let nameArray = otherChatUser.map(user => user.firstName + " " + user.lastName);
+        
+        chatName = nameArray.join(", ")
+    }
+    
+    return chatName;
+}
+
+function getOtherChatUser(users){
+    if(users.length == 1){
+        return users;
+    }
+    
+    return users.filter(user => user._id != userLoggedIn._id )
+}
