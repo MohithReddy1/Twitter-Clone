@@ -23,7 +23,7 @@ function outputChatList(chatList, container){
 function createChatHtml(chartData){
     let chatName = getChatName(chartData);
     let image = getChatImageElements(chartData);
-    let latestMessage = "latest Message";
+    let latestMessage = getLatestMessage(chartData.latestMessage);
 
     return `<a href='/messages/${chartData._id}' class='resultListItem'>
                 ${image}
@@ -32,6 +32,15 @@ function createChatHtml(chartData){
                     <span class='latestMessage ellipsis'>${latestMessage}</span>
                 </div>
             </a>`
+}
+
+function getLatestMessage(latestMessage) {
+    if(latestMessage != null) {
+        var sender = latestMessage.sender;
+        return `${sender.firstName} ${sender.lastName}: ${latestMessage.content}`;
+    }
+
+    return " ";
 }
 
 function getChatImageElements(chartData){

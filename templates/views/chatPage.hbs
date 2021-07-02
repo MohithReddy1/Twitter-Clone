@@ -46,6 +46,7 @@
             </nav>
             <p id="errorhandle" style="display: none;">{{errorMessage}}</p>
             <div class="mainSectionContainer col-9 col-md-7 col-lg-6">
+            {{!-- <div class="mainSectionContainer col-8 col-md-6 col-lg-5"> --}}
                 <div class="titlecontainer">
                     <span class="backward"><a href="javascript:history.back()"><img src="/images/back.svg" alt="back"></a></span>
                     <h1>Chat</h1>
@@ -64,13 +65,17 @@
                         <span id="chatName" data-bs-toggle="modal" data-bs-target="#chatNameModal">ChatName</span>
                     </div>
                     <div class="mainContentContainer">
-                        <div class="chatContainer">
-                            <div class="chatMessages">
+                        <div class="loadingSpinnerContainer">
+                            <img src="/images/loadingSpinner.gif" alt="Loading Spinner">
+                        </div>
+                        <div style="visibility: hidden;" class="chatContainer">
+                            <ul class="chatMessages">
 
-                            </div>
+                            </ul>
 
                             <div class="fotter">
-                                <textarea name="messageInput" placeholder="Start a new message" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea>
+                                {{!-- <textarea name="messageInput" placeholder="Start a new message" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea> --}}
+                                <textarea class="inputTextBox" name="messageInput" placeholder="Start a new message" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);"></textarea>
                                 <button class="sendMessageButton"><i class="far fa-paper-plane"></i></button>
                             </div>
                         </div>

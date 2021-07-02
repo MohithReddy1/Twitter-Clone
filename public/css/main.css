@@ -87,7 +87,8 @@ nav a span{
     text-decoration: none;
     font-weight: 700;
     padding-left: 25px;
-    font-size: 1.3vw;
+    line-height: 24px;
+    font-size: 20px;
 }
 
 .wrapper{
@@ -342,6 +343,8 @@ button{
 .mainContentContainer{
     flex:1;
     display:flex;
+    overflow-y: hidden;
+    cursor: pointer;
 }
 
 .postContentContainer{
@@ -746,6 +749,7 @@ button{
     flex-direction: column;
     min-height: 0;
     flex: 1;
+    flex-basis: 0;
 }
 
 .chatTitleBar{
@@ -895,6 +899,7 @@ button{
     display: flex;
     padding: 15px;
     flex-shrink: 0px;
+    border-top: 1px solid #E6ECF0;
 }
 
 .chatContainer .fotter textarea{
@@ -950,6 +955,117 @@ button{
     width: 100%;
 }
 
+/* messages */
+
+.chatMessages .message{
+    padding-bottom: 2px;
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+    -webkit-flex: 0;
+}
+
+.chatMessages .message .messageBody{
+    background-color: rgb(239, 243, 244);
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 15px;
+}
+
+.chatMessages .message .messageContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 55%;
+}
+
+.chatMessages .message.mine .messageContainer{
+    align-items: flex-end;
+}
+
+.chatMessages .message.others .messageContainer{
+    align-items: flex-start;
+}
+
+.chatMessages .message.mine{
+    flex-direction: row-reverse;
+}
+
+.chatMessages .message.mine .messageBody{
+    background-color: rgb(29, 161, 242);
+    color: white;
+}
+
+.chatMessages .message.mine.first .messageBody{
+    border-bottom-right-radius: 2px;
+}
+
+.chatMessages .message.mine:not(.first):not(.last) .messageBody{
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.chatMessages .message.mine.last .messageBody{
+    border-bottom-right-radius: 18px;
+}
+
+.chatMessages .message.mine.last:not(.first) .messageBody{
+    border-top-right-radius: 2px;
+}
+
+.chatMessages .message.others.first .messageBody{
+    border-bottom-left-radius: 2px;
+}
+
+.chatMessages .message.others:not(.first):not(.last) .messageBody{
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.chatMessages .message.others.last .messageBody{
+    border-bottom-left-radius: 18px;
+}
+
+.chatMessages .message.others.last:not(.first) .messageBody{
+    border-top-left-radius: 2px;
+}
+
+.chatMessages .message.others.first.last .messageBody{
+    border-bottom-left-radius: 2px;
+}
+
+.senderName{
+    color: rgba(0,0,0,0.4);
+}
+
+.chatMessages .imageContainer {
+    height: 24px;
+    width: 24px;
+    margin-right: 7px;
+}
+
+.chatMessages img {
+    height: 100%;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+
+.chatMessages .message.last {
+    margin-bottom: 7px;
+}
+
+.loadingSpinnerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loadingSpinnerContainer img{
+    width: 50%;
+    max-width: 75px;
+}
+
 @media screen and (max-width: 1280px) {
     nav a span{
         display: none;
@@ -965,7 +1081,7 @@ button{
 }
 
 @media screen and (max-width: 1004px){
-    .last{
+    .lastSection{
         visibility: hidden;
     }
 }

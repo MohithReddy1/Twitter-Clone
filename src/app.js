@@ -48,6 +48,9 @@ const logoutRoute = require('./routes/logoutRoutes');
 const postsApiRoute = require('./routes/api/posts');
 const usersApiRoute = require('./routes/api/users');
 const chatsApiRoute = require('./routes/api/chats');
+const messagessApiRoute = require('./routes/api/messages');
+
+//Routes app.use
 
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
@@ -58,9 +61,12 @@ app.use("/search", middleware.requireLogin, searchRoute);
 app.use("/messages", middleware.requireLogin, messageRoute);
 app.use("/logout", middleware.requireLogin, logoutRoute);
 
+//Api ap.use
+
 app.use("/api/posts", postsApiRoute);
 app.use("/api/users", usersApiRoute);
 app.use("/api/chats", chatsApiRoute);
+app.use("/api/messages", messagessApiRoute);
 
 app.get("/", middleware.requireLogin, (req, res, next) => {
     let page = {

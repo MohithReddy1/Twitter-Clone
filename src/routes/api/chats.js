@@ -7,7 +7,7 @@ const router = express.Router();
 const User = require('../../models/UserSchema');
 const Post = require('../../models/PostSchema');
 const Chat = require('../../models/ChatSchema');
-
+const Message = require('../../models/MessageSchema');
 
 app.use(express.urlencoded({extended:false}));
 
@@ -45,13 +45,15 @@ router.post("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
     Chat.find({ users: { $elemMatch: { $eq: req.session.user._id } }})
     .populate("users")
-    .sort({ updatedAt: -1})
-    .then(results => {
-        res.status(200).send(results);
+    .populate("latestMessage")
+    .sort({ updatedAt: -1 })
+    .then(async results => {
+        results = await User.populate(results, { path: "latestMessage.sender" });
+        res.status(200).send(results)
     })
     .catch(error => {
         console.log(error);
-res.sendStatus(400);      
+        res.sendStatus(400);
     })
 });
 
@@ -74,7 +76,20 @@ router.put("/:chatId", async (req, res, next) => {
         console.log(error);
         res.sendStatus(400);
     })
-})
+});
+
+router.get("/:chatId/messages", async (req, res, next) => {
+    
+    Message.find({chat: req.params.chatId})
+    .populate("sender")
+    .then(results => {
+        res.status(200).send(results);
+    })
+    .catch(error => {
+        console.log(error);
+        res.sendStatus(400);      
+    })
+});
 
 
 module.exports = router;
