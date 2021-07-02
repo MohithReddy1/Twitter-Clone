@@ -1034,6 +1034,10 @@ button{
     border-bottom-left-radius: 2px;
 }
 
+.chatMessages .message.mine.first.last .messageBody{
+    border-bottom-right-radius: 2px;
+}
+
 .senderName{
     color: rgba(0,0,0,0.4);
 }
