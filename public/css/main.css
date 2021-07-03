@@ -899,7 +899,7 @@ button{
     display: flex;
     padding: 15px;
     flex-shrink: 0px;
-    border-top: 1px solid #E6ECF0;
+    /* border-top: 1px solid #E6ECF0; */
 }
 
 .chatContainer .fotter textarea{
@@ -963,14 +963,28 @@ button{
     display: flex;
     align-items: flex-end;
     flex-shrink: 0;
-    -webkit-flex: 0;
 }
 
+.chatContainer ul{
+    margin: 0;
+}
+
+.typingDots img,
 .chatMessages .message .messageBody{
     background-color: rgb(239, 243, 244);
     padding: 6px 12px;
     border-radius: 18px;
     font-size: 15px;
+}
+
+.typingDots img{
+    height: 35px;
+}
+
+.typingDots{
+    padding: 0 15px;
+    padding-bottom: 0;
+    display: none;
 }
 
 .chatMessages .message .messageContainer{
