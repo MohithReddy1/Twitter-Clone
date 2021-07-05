@@ -41,6 +41,7 @@ const profileRoute = require('./routes/profileRoutes');
 const uploadRoute = require('./routes/uploadRoutes');
 const searchRoute = require('./routes/searchRoutes');
 const messageRoute = require('./routes/messagesRoutes');
+const notificationsRoute = require('./routes/notificationsRoutes');
 const logoutRoute = require('./routes/logoutRoutes');
 
 //Api routes
@@ -48,7 +49,8 @@ const logoutRoute = require('./routes/logoutRoutes');
 const postsApiRoute = require('./routes/api/posts');
 const usersApiRoute = require('./routes/api/users');
 const chatsApiRoute = require('./routes/api/chats');
-const messagessApiRoute = require('./routes/api/messages');
+const messagesApiRoute = require('./routes/api/messages');
+const notificationsApiRoute = require('./routes/api/notifications');
 
 //Routes app.use
 
@@ -59,14 +61,16 @@ app.use("/profile", middleware.requireLogin, profileRoute);
 app.use("/uploads", uploadRoute);
 app.use("/search", middleware.requireLogin, searchRoute);
 app.use("/messages", middleware.requireLogin, messageRoute);
+app.use("/notifications", middleware.requireLogin, notificationsRoute);
 app.use("/logout", middleware.requireLogin, logoutRoute);
 
-//Api ap.use
+//Api app.use
 
 app.use("/api/posts", postsApiRoute);
 app.use("/api/users", usersApiRoute);
 app.use("/api/chats", chatsApiRoute);
-app.use("/api/messages", messagessApiRoute);
+app.use("/api/messages", messagesApiRoute);
+app.use("/api/notifications", notificationsApiRoute);
 
 app.get("/", middleware.requireLogin, (req, res, next) => {
     let page = {
@@ -87,7 +91,7 @@ io.on("connection", socket => {
     socket.on("join room", room => socket.join(room));
     socket.on("typing", room => socket.in(room).emit("typing"));
     socket.on("stop typing", room => socket.in(room).emit("stop typing"));
-
+    socket.on("notification received", room => socket.in(room).emit("notification received"));
 
     socket.on("new message", newMessage => {
         let chat = newMessage.chat;

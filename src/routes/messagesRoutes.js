@@ -69,6 +69,7 @@ router.get("/:chatId", async (req, res, next) => {
 
     else{
         details.chat = JSON.stringify(chat);
+        details.roomId = chat._id;
     }
     
 
