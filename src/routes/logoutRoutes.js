@@ -15,11 +15,12 @@ app.set("views", template_path);
 app.use(express.urlencoded({extended:false}));
 
 router.get("/", (req, res, next) => {
-
-    if (req.session.user) {
-        req.session.destroy();
-        return res.status(200).redirect("login");
-      }
-});
+    
+    if(req.session) {
+        req.session.destroy(() => {
+            res.redirect("/login");
+        })
+    }
+})
 
 module.exports = router;

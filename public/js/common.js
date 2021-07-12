@@ -281,7 +281,7 @@ $(document).on("click", ".post", (event) => {
     let element = $(event.target);
     let postId = getPostIdFromElement(element);
 
-    if(postId !== undefined && !element.is("button") && !element.is("a") ) {
+    if(postId !== undefined && !element.is("button")) {
         window.location.href = '/tweet/' + postId;
     }
 });
