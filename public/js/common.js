@@ -277,7 +277,7 @@ $(document).on("click", ".retweetButton", (event) => {
 
 })
 
-$(document).on("click", ".post", (event) => {
+$(document).on("click", ".postClick", (event) => {
     let element = $(event.target);
     let postId = getPostIdFromElement(element);
 
@@ -410,15 +410,17 @@ function createPostHtml(postData, largeFont = false){
                         </a>
                     </div>
                     <div class = "postContentContainer">
-                        <div class = "header">
-                            <a href="/profile/${postedBy.username}" class="displayName">${displayName}</a>
-                            <span class="username">@${postedBy.username}</span>
-                            <span class = "date"> ${timestamp}</span>
-                            ${buttons}
-                        </div>
-                        ${replyFlag}
-                        <div class = "postBody">
-                        <span>${postData.content}</span>
+                        <div class="postClick">
+                            <div class = "header">
+                                <a href="/profile/${postedBy.username}" class="displayName">${displayName}</a>
+                                <span class="username">@${postedBy.username}</span>
+                                <span class = "date"> ${timestamp}</span>
+                                ${buttons}
+                            </div>
+                            ${replyFlag}
+                            <div class = "postBody">
+                            <span>${postData.content}</span>
+                            </div>
                         </div>
                         <div class = "postFooter">
                             <div class="postButtonContainer">
