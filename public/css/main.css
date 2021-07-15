@@ -498,15 +498,14 @@ button{
 } */
 
 .searchContainer{
-    padding:10px 15px;
     position: relative;
     color: rgb(101, 119, 134);
 }
 
 .searchContainer span {
     position: absolute;
-    top: 16px;
-    left: 25px;
+    top: 6px;
+    left: 15px;
 }
 
 #searchBox:focus{
@@ -515,7 +514,10 @@ button{
 }
 
 .heading{
+    margin-top: 20px;
     padding:10px 15px;
+    background-color: rgb(247, 249, 249);
+    border-radius: 10px;
 }
 
 .heading h2{
@@ -817,8 +819,38 @@ button{
     border-bottom: 1px solid #E6ECF0;
 }
 
+.headContainer{
+    display: flex;
+}
+
 .resultListItem:hover{
     background-color: #F2F2F2;
+}
+
+.resultsSymbolContainer{
+    width:2em;
+    height:2em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:1rem;
+}
+
+.resultsSymbolContainer span{
+    font-size:1.5em;
+}
+
+.resultsSymbolContainer span.heart{
+    color: rgb(224, 36, 94);
+}
+
+.resultsSymbolContainer span.comment,
+.resultsSymbolContainer span.user{
+    color: rgb(29,161,242);
+}
+
+.resultsSymbolContainer span.retweet{
+    color: rgb(23, 191, 99);
 }
 
 .resultsDetailsContainer{
@@ -1155,6 +1187,10 @@ button{
 #notificationList a{
     text-decoration:none;
     color:inherit;
+}
+
+.lastSection{
+    padding: 15px;
 }
 
 

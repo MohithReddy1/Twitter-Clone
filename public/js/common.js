@@ -714,10 +714,14 @@ function outputNotificationList(notifications, container) {
 function createNotificationHtml(notification) {
     let userFrom = notification.userFrom;
     let text = getNotificationText(notification);
+    let symbol = getNotificationSymbol(notification);
     let href = getNotificationUrl(notification);
     let className = notification.opened ? "" : "active";
 
     return `<a href='${href}' class='resultListItem notification ${className}' data-id='${notification._id}'>
+                <div class='resultsSymbolContainer'>
+                ${symbol}
+                </div>
                 <div class='resultsImageContainer'>
                     <img src='${userFrom.profilePic}'>
                 </div>
@@ -753,6 +757,32 @@ function getNotificationText(notification) {
     }
 
     return `<span class='ellipsis'>${text}</span>`;
+}
+
+function getNotificationSymbol(notification) {
+
+    let userFrom = notification.userFrom;
+
+    if(!userFrom.firstName || !userFrom.lastName) {
+        return alert("user from data not populated");
+    }
+
+    let symbol;
+
+    if(notification.notificationType == "retweet") {
+        symbol= `<span class="retweet"><i class="fas fa-retweet"></i></span>`;
+    }
+    else if(notification.notificationType == "tweetLike") {
+        symbol= `<span class="heart"><i class="fas fa-heart"></i></span>`;
+    }
+    else if(notification.notificationType == "reply") {
+        symbol= `<span class="comment"><i class="far fa-comment"></i></span>`;
+    }
+    else if(notification.notificationType == "follow") {
+        symbol= `<span class="user"><i class="fas fa-user"></i></span>`;
+    }
+
+    return `${symbol}`;
 }
 
 function getNotificationUrl(notification) { 
