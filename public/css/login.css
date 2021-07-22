@@ -48,6 +48,10 @@ p{
     width: 100%;
 }
 
+.loginContainer span{
+    font-size:medium;
+}
+
 .loginContainer input:focus{
     outline:none;
     border: 2px solid rgb(29, 161, 242);

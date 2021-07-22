@@ -50,12 +50,18 @@ router.post("/", async (req, res, next) => {
             let data = req.body;
 
             //data.password = await bcrypt.hash(password, 10);
-
-            User.create(data)
-            .then((user) =>{
-                req.session.user = user;
-                return res.redirect("/");
+            if(data.password.length<6){
+                payload.errorMessage = "Password must be 6-12 characters.";
+                res.status(200).render("register", payload);
+            }
+            else{
+                User.create(data)
+                .then((user) =>{
+                    req.session.user = user;
+                    return res.redirect("/");
             })
+            }
+            
         }
         else{
             //User found

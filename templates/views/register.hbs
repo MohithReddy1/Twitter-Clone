@@ -35,13 +35,14 @@
                     <label for="email">Email</label>
                 </div>
                 <div>
-                    <input type="password" id="password" name="password" required>
+                    <input style="margin-bottom: 0px;" type="password" id="password" name="password" maxlength="12" required>
                     <label for="password">Password</label>
                     <i class="material-icons" onclick="change(this)">visibility_off</i> 
+                    <span><span style="color: red;">*</span>Password must be 6-12 characters</span>
                 </div>
                 <div>
-                    <input type="password" id="confirmpassword" name="passwordConf" required>
-                    <label for="passwordConf">Confirm Password</label>
+                    <input style="margin-top: 18px;" type="password" id="confirmpassword" name="passwordConf" maxlength="12" required>
+                    <label for="passwordConf" style="margin-top: 18px;" >Confirm Password</label>
                     {{!-- <i class="material-icons" onclick="change(this)">visibility_off</i>  --}}
                 </div>
                 <input type="submit" value="Sign up">
