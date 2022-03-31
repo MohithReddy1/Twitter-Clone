@@ -15,9 +15,9 @@ In this Project the main outcomes are:
 - Different types of Notifications.
 
 ### Software’s:
-**Environment:** Windows
-**Code Editor:** Visual Studio Code Editor
-**Frontend:** HBS(Html), CSS, Bootstrap, JavaScript
-**Backend:** NodeJS, Express, MongoDB Atlas Database, JavaScript, Ajax, Jquery, SOCKET.IO for Real time chatting and notifications.
+- **Environment:** Windows
+- **Code Editor:** Visual Studio Code Editor
+- **Frontend:** HBS(Html), CSS, Bootstrap, JavaScript
+- **Backend:** NodeJS, Express, MongoDB Atlas Database, JavaScript, Ajax, Jquery, SOCKET.IO for Real time chatting and notifications.
 
 [Click here for Project Report](https://docs.google.com/document/d/1TETsIK4FBhbY0pJROiQEnjQsWQyH0XKd/edit?usp=sharing&ouid=112789685075271966899&rtpof=true&sd=true)
