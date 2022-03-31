@@ -6,13 +6,13 @@ For this project first we need to set up a server with Nodejs and database with 
 
 ### Outcomes:
 In this Project the main outcomes are:
-•	Signup and Login.
-•	Tweeting the tweets.
-•	Likes, Retweets, Replying and Deleting the tweet.
-•	Profile Page, Changing Profile Picture & Cover Photo.
-•	Searching for Tweets & Users.
-•	One-to-One Chat & Group Chat.
-•	Different types of Notifications.
+- Signup and Login.
+- Tweeting the tweets.
+- Likes, Retweets, Replying and Deleting the tweet.
+- Profile Page, Changing Profile Picture & Cover Photo.
+- Searching for Tweets & Users.
+- One-to-One Chat & Group Chat.
+- Different types of Notifications.
 
 ### Software’s:
 **Environment:** Windows
