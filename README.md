@@ -21,3 +21,5 @@ In this Project the main outcomes are:
 - **Backend:** NodeJS, Express, MongoDB Atlas Database, JavaScript, Ajax, Jquery, SOCKET.IO for Real time chatting and notifications.
 
 [Click here for Project Report](https://docs.google.com/document/d/1TETsIK4FBhbY0pJROiQEnjQsWQyH0XKd/edit?usp=sharing&ouid=112789685075271966899&rtpof=true&sd=true)
+
+[Click here to experience the twitter clone website ](https://twitter9.herokuapp.com/)
